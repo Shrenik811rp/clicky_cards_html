@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* "*" used to select any and all types of elements in an HTML page*/
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container{
+	display: flex;
+	width: 90vw;
+
+}
+
+.card{
+	background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  /*for smooth transition*/
+  -webkit-transition:all 1s ease-in;
+}
+
+.card h3 {
+  font-size: 25px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.card.active {
+  flex: 10;
+}
+
+.card.active h3 {
+  opacity: 1;
+  transition: opacity 0.4s ease-in 0.5s;
+}
+
+@media (max-width: 200px) {
+  .container {
+    width: 100vw;
+  }
+
+  .card:nth-of-type(1),
+  .card:nth-of-type(2) {
+    display: none;
+  }
+}
